@@ -33,7 +33,25 @@ console.log(result) // "ghimmnorstyy"
 
 **/
 
+//inputs: a string (no nubers or punctuation)
+//outputs: a string in alphabetical order
+
+//what does the function do? what is its purpose?
+	//splits the string's words into an array of characters
+	//get rid of the spaces using trim
+	//store the resulting array in a variable
+	//sort the array into alphabetical order
+	//join the elements in the array back into a string taking in the .join() argument ''
+	//get rid of the space using trim
+
 function alphabetSoup(str) {
-	//Your code here
-	
+	// method chaining var chars = str.split('').chars.sort().array.join('').newArray.trim();
+	var chars = str.split('');
+	var array = chars.sort();
+	var newArray = array.join('');
+	var string = newArray.trim();
+
+	return (string);
 }
+var result = alphabetSoup("my string oh my");
+console.log(result)
