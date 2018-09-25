@@ -37,9 +37,28 @@ console.log(result) // -1
 
 **/
 
-
+//Given two numbers, a, b, as inputs, return true if a > b,return false if a < b, return 0 otherwise.
+	//inputs two numbers a and b
+	//outputs true or false - which indicates that we should be using a boolean. note that we are returning a 0 if a is equal to b
+	
 
 function isBigger(a, b) {
-	//Your code here
+	var result = '';
+	if (typeof a === "number" && typeof b === "number"){
+		if (a > b) {
+			result = true;
+		}
 	
-}
+		else if (a < b) {
+			result = false;
+		}	
+		else if (a == b){
+			result = 0;
+		}
+	else {
+		result = -1;
+		}
+	
+	return result;
+	}
+};
