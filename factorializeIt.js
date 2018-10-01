@@ -6,9 +6,17 @@
 // For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
 
 // Check out Arithmetic Operators https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators
-
+//inputs: a whole number
+//outputs: the factorialized number which is equal to the product of all positive integers less than or equal to the number.
+//Create a new variable that will store the output
+//Create a loop, the loop will run from 1 until the value of the number
+//Multiply the value of our new variable by the current value of i (aka our counter)
 function factorializeIt(num) {
-  //your code here
+  var createFactorial = 1;
+  for (i = 1; i <= num; i++) {
+    createFactorial *= i;
+  }
+  return createFactorial;
 }
-
-factorializeIt(5);
+var result = factorializeIt(5);
+console.log(result);
