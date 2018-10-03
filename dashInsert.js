@@ -25,6 +25,31 @@ console.log(result) // "1-3"
 
 **/
 
+//input: a string that contains one integer
+//output: a string with dashes in between each odd number
+//purspose: 
+	//split to into an array
+	//store the array in a variable
+	//create a variable to store the output of the loop into a string	
+	//add a for loop
+		//create a conditional statment that checks if two elements next to each other are odd - is the number we're looking at and the next number in the array are both odd
+			//if they are, we need to add the number itself and a dash to the variable storing out output
+			//if they are not odd you want to just add the number to the variable storing the output
+
+	//return the string aka the variable storing the output from our loop
+	//console log the variable above to show in the console
+
 function dashInsert(str) {
-	// Your code
-}
+    var arrayNumbers = str.split("");
+    var newString = "";
+    for (var i = 0; i < arrayNumbers.length; i++){
+        if (arrayNumbers[i]%2 === 1 && arrayNumbers[i+1]%2 === 1){
+            newString = newString + arrayNumbers[i] + "-";
+        } else {
+            newString = newString + arrayNumbers[i];
+        }
+    }
+    return newString;
+}    
+var result = dashInsert("4457981");
+console.log(result);
