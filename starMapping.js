@@ -12,13 +12,36 @@
 
 //Helpful Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
 
+//input: an array of objects
+//output: a new array
+//purpose: transforms the elements average altitude into their orbital periods
+//round the number to its nearest whole number - Math.round(x)
+//to use exponents use Math.pow(8, 2)
+//var a = earthRadius + avgAlt[0,2];
+//var orbitalPeriod = (2*pi) * Math.sqrt(Math.pow(a,3)/GM)
+//Create a new variable obResult as the output array
+//Loop through the elements of the input array
+//Calculate the value of the orbitalPeriod
+//push the elements into the obResult
+//create name key for the object and create the orbitalPeriod key
+//return the collection obResult
 function orbitalPeriod(arr) {
   var GM = 398600.4418;
   var earthRadius = 6367.4447;
-  //your code here
+  var obResult = [];
+  for (var i = 0; i < arr.length; i++){
+    var a = earthRadius + arr[i].avgAlt;
+    var orbitalPeriodCalc = Math.round((2* Math.PI) * (Math.sqrt(Math.pow(a,3)/GM)));
+    var calcObj = {};
+    calcObj.name = arr[i].name;
+    calcObj.orbitalPeriod = orbitalPeriodCalc;
+    obResult.push(calcObj);
+  }
+  return obResult;
 }
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+var result = orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+console.log(result);
 
 //TEST CASES
 
